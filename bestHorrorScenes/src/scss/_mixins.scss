@@ -1,0 +1,20 @@
+$pc: 1280px;
+$maxTablet: 1279px;
+$minTablet: 768px;
+$phone: 767px;
+
+@mixin responsive($device) {
+  @if $device == "pc" {
+    @media screen and (min-width: $pc) {
+      @content;
+    }
+  } @else if $device == "tablet" {
+    @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
+      @content;
+    }
+  } @else if $device == "phone" {
+    @media screen and (max-width: $phone) {
+      @content;
+    }
+  }
+}
